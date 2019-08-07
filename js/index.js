@@ -86,3 +86,16 @@ middleBottomButton.addEventListener('contextmenu', (function() {
     newButton.textContent = "Jeff is Awesome!";
     buttonContainer.appendChild(newButton);
 }))
+
+// event propogation
+
+let bodyBackground = document.querySelector("body");
+bodyBackground.addEventListener('click', (function() {
+    bodyBackground.style.backgroundColor = "hotpink";
+}));
+
+let textBackground = document.querySelector("p");
+textBackground.addEventListener('click', (function() {
+    textBackground.style.backgroundColor = "green";
+    event.stopPropagation();
+}));
